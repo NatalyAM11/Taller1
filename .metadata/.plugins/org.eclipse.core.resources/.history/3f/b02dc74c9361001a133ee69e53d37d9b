@@ -75,7 +75,7 @@ public class Main extends PApplet {
 			break;
 			
 		case 4:
-			image(PHistorial,0,0);
+			//image(PInicio,0,0);
 			break;
 			
 		}
@@ -114,7 +114,7 @@ public class Main extends PApplet {
 		}
 		break;
 		case 3:    if((mouseX>346 && mouseX<618)&&(mouseY>28 && mouseY<70)) {
-			       pantalla=4;
+			       image(oHistorial,167,mouseY);
 			      
 		}
 		

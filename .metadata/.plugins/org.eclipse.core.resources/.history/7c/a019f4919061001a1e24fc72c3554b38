@@ -14,7 +14,7 @@ public class Main extends PApplet {
 	PImage bContinuar;
 	PImage pMenu;
 	PImage bFlecha;
-	PImage PHistorial;
+	PImage oHistorial;
 	
 
 	private int pantalla = 0;
@@ -39,7 +39,7 @@ public class Main extends PApplet {
 		bContinuar=loadImage("img/bcontinuar.png");
 		pMenu=loadImage("img/pMenu.png");
 		bFlecha=loadImage("img/flecha.png");
-		PHistorial=loadImage("img/pMenuHisto.png");
+		oHistorial=loadImage("img/oHistorial.png");
 	//	userRegView = new UserRegisterView(this);
 		
 		
@@ -71,11 +71,11 @@ public class Main extends PApplet {
 			
 		case 3:
 			image(pMenu,0,0);
-			
+			image(bFlecha,372,219);
 			break;
 			
 		case 4:
-			image(PHistorial,0,0);
+			//image(PInicio,0,0);
 			break;
 			
 		}
@@ -111,11 +111,6 @@ public class Main extends PApplet {
 		case 2:    if((mouseX>130 && mouseX<294)&&(mouseY>531 && mouseY<578)) {
 			       image(bContinuar,130,531);
 			       pantalla=3;
-		}
-		break;
-		case 3:    if((mouseX>346 && mouseX<618)&&(mouseY>28 && mouseY<70)) {
-			       pantalla=4;
-			      
 		}
 		
 	}
