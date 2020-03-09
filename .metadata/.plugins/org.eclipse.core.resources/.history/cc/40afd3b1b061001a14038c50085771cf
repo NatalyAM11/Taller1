@@ -291,11 +291,11 @@ public class Main extends PApplet {
 		break;
 		
 		case 13: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
-			pantalla=7;
+			pantalla=5;
   		}
 		break;
 		case 14: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
-			pantalla=8;
+			pantalla=6;
   		}
 		break;
 	}

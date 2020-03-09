@@ -254,16 +254,14 @@ public class Main extends PApplet {
 		//Para pasar a la pantalla de info
 		if((mouseX>102 && mouseX<308)&&(mouseY>588 && mouseY<620)) {
 			pantalla=12;}
+				
+  		
 		break;
-		
 		
 		//modelX
 		case 7: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
 			pantalla=3;
 		 }
-		//Para pasar a la pantalla de info
-				if((mouseX>102 && mouseX<308)&&(mouseY>588 && mouseY<620)) {
-					pantalla=13;}
 		break;
 				
 				
@@ -271,33 +269,21 @@ public class Main extends PApplet {
 		case 8: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
 			pantalla=3;
   		}	
-		//Para pasar a la pantalla de info
-		if((mouseX>102 && mouseX<308)&&(mouseY>588 && mouseY<620)) {
-			pantalla=14;}
-			break;
-		
+		break;
 		
 		case 9: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
 			pantalla=3;
   		}
 		break;
 		case 11: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
-			pantalla=5;
+			pantalla=3;
   		}
 		break;
 		case 12: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
-			pantalla=6;
+			pantalla=3;
   		}
 		break;
-		
-		case 13: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
-			pantalla=7;
-  		}
-		break;
-		case 14: if((mouseX>41 && mouseX<81)&&(mouseY>30 && mouseY<69)) {
-			pantalla=8;
-  		}
-		break;
+			
 	}
 		
 
