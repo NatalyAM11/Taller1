@@ -55,8 +55,8 @@ public class Pantalla {
 		pCompra2=app.loadImage("img/pCompra2.png");
 		modelSFoto=app.loadImage("img/modelSFoto.png");
 		model3Foto=app.loadImage("img/model3Foto.png");
-		modelXFoto=app.loadImage("img/modelSFoto.png");
-		modelYFoto=app.loadImage("img/model3Foto.png");
+		modelXFoto=app.loadImage("img/modelXFoto.png");
+		modelYFoto=app.loadImage("img/modelYFoto.png");
 		
 		
 		//userRegister = new UserRegisterView(app);
@@ -268,6 +268,10 @@ public class Pantalla {
 				//Para pasar a la pantalla de info
 						if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 &&app. mouseY<620)) {
 							pantalla=13;}
+						//pantalla compra
+						if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
+							pantalla=10;
+							compra=2;}
 				break;
 						
 						
@@ -278,6 +282,10 @@ public class Pantalla {
 				//Para pasar a la pantalla de info
 				if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 && app.mouseY<620)) {
 					pantalla=14;}
+				
+				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
+					pantalla=10;
+					compra=3;}
 					break;
 				
 				//pantalla historial
@@ -326,11 +334,18 @@ public class Pantalla {
 			}
 			}
 	
+	
+	//Para evitarme crear 4 pantallas de compra diferentes, es la misma pantalla pero cambia el modelo y el precio 
+	//del carro 
 	public void ponerImagenPrecio() {
 		switch(compra) {
-		case 0:app.image(modelSFoto,0,0); 
+		case 0:app.image(modelSFoto,40,140); 
 			break;
-		case 1:app.image(model3Foto,0,0); 
+		case 1:app.image(model3Foto,40,140); 
+		break;
+		case 2:app.image(modelXFoto,40,140); 
+		break;
+		case 3:app.image(modelYFoto,40,140); 
 		break;
 		}
 	}

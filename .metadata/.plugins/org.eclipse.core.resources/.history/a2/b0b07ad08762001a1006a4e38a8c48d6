@@ -12,8 +12,9 @@ public class Pantalla {
 	//pantalla
 	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial;
 	private PImage pModelS,pModel3,pModelX,pModelY;
-	private PImage pHistorial,pCompra;
+	private PImage pHistorial,pCompra, pCompra2;
 	private PImage pInfoS,pInfo3,pInfoX,pInfoY;
+	private PImage modelSFoto,model3Foto,modelXFoto,modelYFoto;
 	
 	//botones
 	private PImage bContinuar;
@@ -24,7 +25,7 @@ public class Pantalla {
 	
 	private UserRegisterView userRegister;
 
-	
+	int compra;
 	
 	public Pantalla (PApplet app) {
 		this.app=app;
@@ -51,8 +52,14 @@ public class Pantalla {
 		pInfoX=app.loadImage("img/pInfoX.png");
 		pInfoY=app.loadImage("img/pInfoY.png");
 		pCompra=app.loadImage("img/pCompra.png");
+		pCompra2=app.loadImage("img/pCompra2.png");
+		modelSFoto=app.loadImage("img/modelSFoto.png");
+		model3Foto=app.loadImage("img/model3Foto.png");
+		modelXFoto=app.loadImage("img/modelSFoto.png");
+		modelYFoto=app.loadImage("img/model3Foto.png");
 		
-		userRegister = new UserRegisterView(app);
+		
+		//userRegister = new UserRegisterView(app);
 }
 	
 
@@ -69,7 +76,7 @@ public class Pantalla {
 			//pantalla de registro
 		case 1:
 			 app.image(PSub,0,0);
-			userRegister.drawScreen();
+			//userRegister.drawScreen();
 			break;
 			
 			//pantalla de exito 
@@ -108,6 +115,8 @@ public class Pantalla {
 			
 		case 10:
 			app.image(pCompra,0,0);
+			ponerImagenPrecio();
+			
 			break;
 		case 11:
 			app.image(pInfoS,0,0);
@@ -123,6 +132,9 @@ public class Pantalla {
 			break;
 		case 15:
 			app.image(pInfoY,0,0);
+			break;
+		case 16:
+			app.image(pCompra2,0,0);
 			break;
 			
 			
@@ -146,8 +158,8 @@ public class Pantalla {
 		
 					
 		//pantalla de registro
-		case 1: userRegister.getInfoForm();
-		        userRegister.getInfoForm();
+		case 1: //userRegister.getInfoForm();
+		        //userRegister.getInfoForm();
 		
 		      if((app.mouseX>127 && app.mouseX<276)&&(app.mouseY>560 && app.mouseY<605)) {
 				pantalla=2;
@@ -224,9 +236,11 @@ public class Pantalla {
 				if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 && app.mouseY<620)) {
 					pantalla=11;}
 				
-				//Para pasar a la pantalla de info
-				if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 && app.mouseY<620)) {
-					pantalla=11;}
+				//Para pasar a la pantalla de compra
+				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
+					pantalla=10;
+					compra=0;
+					}
 				break;
 			
 				
@@ -240,6 +254,10 @@ public class Pantalla {
 				//Para pasar a la pantalla de info
 				if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 && app.mouseY<620)) {
 					pantalla=12;}
+				//Para pasar a la pantalla de compra
+				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
+					pantalla=10;
+					compra=1;}
 				break;
 				
 				
@@ -262,11 +280,27 @@ public class Pantalla {
 					pantalla=14;}
 					break;
 				
-				
+				//pantalla historial
 				case 9: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=3;
 		  		}
 				break;
+				
+			
+				case 10:
+					if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
+					pantalla=5;
+		  		}
+					if((app.mouseX>348 && app.mouseX<385)&&(app.mouseY>643 && app.mouseY<666)) {
+						pantalla=16;
+			  		}
+					if((app.mouseX>104 && app.mouseX<306)&&(app.mouseY>634 && app.mouseY<673)) {
+						pantalla=5;
+			  		}
+					
+					break;
+					
+					//pantallas info del carro model s,3,x,y
 				case 11: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=5;
 		  		}
@@ -284,9 +318,22 @@ public class Pantalla {
 					pantalla=8;
 		  		}
 				break;
-			}
 				
+				//segunda pantalla de compra
+				case 16: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
+					pantalla=10;
+		  		}
 			}
+			}
+	
+	public void ponerImagenPrecio() {
+		switch(compra) {
+		case 0:app.image(modelSFoto,0,0); 
+			break;
+		case 1:app.image(model3Foto,0,0); 
+		break;
+		}
+	}
 		
 }
 
