@@ -12,7 +12,7 @@ public class Pantalla {
 	//pantalla
 	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial;
 	private PImage pModelS,pModel3,pModelX,pModelY;
-	private PImage pHistorial,pCompra, pCompra2;
+	private PImage pHistorial,pCompra, pCompra2, pCompra3;
 	private PImage pInfoS,pInfo3,pInfoX,pInfoY;
 	private PImage modelSFoto,model3Foto,modelXFoto,modelYFoto;
 	
@@ -53,6 +53,7 @@ public class Pantalla {
 		pInfoY=app.loadImage("img/pInfoY.png");
 		pCompra=app.loadImage("img/pCompra.png");
 		pCompra2=app.loadImage("img/pCompra2.png");
+		pCompra3=app.loadImage("img/pCompra3.png");
 		modelSFoto=app.loadImage("img/modelSFoto.png");
 		model3Foto=app.loadImage("img/model3Foto.png");
 		modelXFoto=app.loadImage("img/modelXFoto.png");
@@ -135,6 +136,9 @@ public class Pantalla {
 			break;
 		case 16:
 			app.image(pCompra2,0,0);
+			break;
+		case 17:
+			app.image(pCompra3,0,0);
 			break;
 			
 			
@@ -297,14 +301,27 @@ public class Pantalla {
 			
 				case 10:
 					if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
-					pantalla=5;
+						
+					//Con estos if controlo que el regreso de pantalla sea el correspondiente para cada modelo de carro
+					if (compra==0) {
+						pantalla=5;
+					}
+					if (compra==1) {
+						pantalla=6;
+					}
+					if (compra==2) {
+						pantalla=7;
+					}
+					if (compra==3) {
+						pantalla=8;
+					}
 		  		}
+					
+					//para seguir a la segunda pantalla de compra
 					if((app.mouseX>348 && app.mouseX<385)&&(app.mouseY>643 && app.mouseY<666)) {
 						pantalla=16;
 			  		}
-					if((app.mouseX>104 && app.mouseX<306)&&(app.mouseY>634 && app.mouseY<673)) {
-						pantalla=5;
-			  		}
+					
 					
 					break;
 					
@@ -330,6 +347,14 @@ public class Pantalla {
 				//segunda pantalla de compra
 				case 16: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=10;
+		  		}
+				if((app.mouseX>348 && app.mouseX<385)&&(app.mouseY>643 && app.mouseY<666)) {
+					pantalla=17;
+		  		}
+				break;
+				//tercera pantalla de compra
+				case 17: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
+					pantalla=16;
 		  		}
 			}
 			}

@@ -12,8 +12,9 @@ public class Pantalla {
 	//pantalla
 	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial;
 	private PImage pModelS,pModel3,pModelX,pModelY;
-	private PImage pHistorial,pCompra;
+	private PImage pHistorial,pCompra, pCompra2, pCompra3;
 	private PImage pInfoS,pInfo3,pInfoX,pInfoY;
+	private PImage modelSFoto,model3Foto,modelXFoto,modelYFoto;
 	
 	//botones
 	private PImage bContinuar;
@@ -51,6 +52,13 @@ public class Pantalla {
 		pInfoX=app.loadImage("img/pInfoX.png");
 		pInfoY=app.loadImage("img/pInfoY.png");
 		pCompra=app.loadImage("img/pCompra.png");
+		pCompra2=app.loadImage("img/pCompra2.png");
+		pCompra3=app.loadImage("img/pCompra3.png");
+		modelSFoto=app.loadImage("img/modelSFoto.png");
+		model3Foto=app.loadImage("img/model3Foto.png");
+		modelXFoto=app.loadImage("img/modelXFoto.png");
+		modelYFoto=app.loadImage("img/modelYFoto.png");
+		
 		
 		//userRegister = new UserRegisterView(app);
 }
@@ -108,6 +116,8 @@ public class Pantalla {
 			
 		case 10:
 			app.image(pCompra,0,0);
+			ponerImagenPrecio();
+			
 			break;
 		case 11:
 			app.image(pInfoS,0,0);
@@ -123,6 +133,12 @@ public class Pantalla {
 			break;
 		case 15:
 			app.image(pInfoY,0,0);
+			break;
+		case 16:
+			app.image(pCompra2,0,0);
+			break;
+		case 17:
+			app.image(pCompra3,0,0);
 			break;
 			
 			
@@ -224,9 +240,11 @@ public class Pantalla {
 				if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 && app.mouseY<620)) {
 					pantalla=11;}
 				
-				//Para pasar a la pantalla de info
+				//Para pasar a la pantalla de compra
 				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
-					pantalla=10;}
+					pantalla=10;
+					compra=0;
+					}
 				break;
 			
 				
@@ -240,6 +258,10 @@ public class Pantalla {
 				//Para pasar a la pantalla de info
 				if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 && app.mouseY<620)) {
 					pantalla=12;}
+				//Para pasar a la pantalla de compra
+				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
+					pantalla=10;
+					compra=1;}
 				break;
 				
 				
@@ -250,6 +272,10 @@ public class Pantalla {
 				//Para pasar a la pantalla de info
 						if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 &&app. mouseY<620)) {
 							pantalla=13;}
+						//pantalla compra
+						if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
+							pantalla=10;
+							compra=2;}
 				break;
 						
 						
@@ -260,21 +286,33 @@ public class Pantalla {
 				//Para pasar a la pantalla de info
 				if((app.mouseX>225 &&app. mouseX<334)&&(app.mouseY>588 && app.mouseY<620)) {
 					pantalla=14;}
+				
+				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
+					pantalla=10;
+					compra=3;}
 					break;
 				
-				
+				//pantalla historial
 				case 9: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=3;
 		  		}
 				break;
 				
-				
+			
 				case 10:
 					if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=5;
 		  		}
+					if((app.mouseX>348 && app.mouseX<385)&&(app.mouseY>643 && app.mouseY<666)) {
+						pantalla=16;
+			  		}
+					if((app.mouseX>104 && app.mouseX<306)&&(app.mouseY>634 && app.mouseY<673)) {
+						pantalla=5;
+			  		}
 					
 					break;
+					
+					//pantallas info del carro model s,3,x,y
 				case 11: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=5;
 		  		}
@@ -292,19 +330,36 @@ public class Pantalla {
 					pantalla=8;
 		  		}
 				break;
+				
+				//segunda pantalla de compra
+				case 16: /*if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
+					pantalla=3;
+		  		}*/
+				if((app.mouseX>348 && app.mouseX<385)&&(app.mouseY>643 && app.mouseY<666)) {
+					pantalla=17;
+		  		}
+				break;
+				//segunda pantalla de compra
+				case 17: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
+					pantalla=16;
+		  		}
 			}
 			}
 	
 	
-	public void pintarPCompra() {
-		
+	//Para evitarme crear 4 pantallas de compra diferentes, es la misma pantalla pero cambia el modelo y el precio 
+	//del carro 
+	public void ponerImagenPrecio() {
 		switch(compra) {
-		case 0: if(pantalla==5 && (app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
-			app.image (modelSFoto,0,0);
-  		}
-		
+		case 0:app.image(modelSFoto,40,140); 
+			break;
+		case 1:app.image(model3Foto,40,140); 
+		break;
+		case 2:app.image(modelXFoto,40,140); 
+		break;
+		case 3:app.image(modelYFoto,40,140); 
+		break;
 		}
-		
 	}
 		
 }
