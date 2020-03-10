@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 
-
 public class Logic {
 	private ArrayList<UserModel> listUsers;
 	public Logic() {
@@ -17,5 +16,14 @@ public class Logic {
 			System.out.println(userModel.getEmail());
 			System.out.println("====================");
 		}
+		
+		/*
+		 * Es lo mismo que arriba pero con indice
+		 * for (int i = 0; i < listUsers.size(); i++) {
+			System.out.println(listUsers.get(i).getUsername());
+			System.out.println(listUsers.get(i).getPassword());
+			System.out.println(listUsers.get(i).getEmail());
+			System.out.println("====================");
+		}*/
 	}
 }

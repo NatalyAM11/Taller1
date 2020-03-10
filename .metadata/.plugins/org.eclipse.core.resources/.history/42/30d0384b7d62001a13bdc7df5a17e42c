@@ -1,0 +1,35 @@
+package main;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class Carro {
+	
+	private PApplet app;
+	private PImage modelSFoto;
+	int precio;
+	int velocidad;
+	int rines;
+	int carro;
+	
+public Carro (PApplet app) {
+	
+	this.app=app;
+
+	
+}
+
+public void cargar() {
+	modelSFoto=app.loadImage("img/modelSFoto.png");
+}
+
+public void pintarTipoC() {
+	
+	switch(carro) {
+	case 0:
+	app.image (modelSFoto,0,0);
+	break;
+	}
+	
+}
+}
+

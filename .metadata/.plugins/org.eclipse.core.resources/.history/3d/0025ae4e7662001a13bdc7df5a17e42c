@@ -1,0 +1,17 @@
+package main;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class Carro {
+	
+	int precio;
+	int velocidad;
+	int rines;
+	
+public Carro () {
+
+	
+	
+	
+}
+}

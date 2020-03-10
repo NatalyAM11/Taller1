@@ -1,0 +1,21 @@
+package main;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public abstract class CarroTesla {
+	
+	
+	int precio;
+	PApplet app;
+	PImage carroSFoto;
+	
+public CarroTesla(PApplet app) {
+	this.carroSFoto=app.loadImage("img/modelSFoto.png");
+	
+	
+}
+
+public void pintar() {
+	app.image(carroSFoto,0,0);
+}
+}

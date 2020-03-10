@@ -1,0 +1,23 @@
+package main;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class Carro {
+	
+	private PApplet app;
+	private PImage modelSFoto;
+	int autonomia;
+	int aceleracion;
+	int rines;
+	int velocidad;
+	int carro;
+	
+public Carro (PApplet app) {
+	
+	this.app=app;
+
+	
+}
+
+}
+

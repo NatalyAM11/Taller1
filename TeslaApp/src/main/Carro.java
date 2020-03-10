@@ -1,0 +1,31 @@
+package main;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class Carro {
+	
+	private PApplet app;
+	private PImage modelSFoto;
+	int autonomia;
+	int aceleracion;
+	int rines;
+	int velocidad;
+	int carro;
+	
+public Carro (PApplet app, int autonomia,int aceleracion,int rines, int velocidad) {
+	
+	this.app=app;
+	this.aceleracion=aceleracion;
+	this.autonomia=autonomia;
+	this.rines=rines;
+	this.velocidad=velocidad;
+
+	
+}
+
+public void comparar() {
+	
+}
+
+}
+

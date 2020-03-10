@@ -23,8 +23,7 @@ public class UserRegisterView {
 		inputs[3] = "email";
 
 		for (int i = 0; i < inputs.length; i++) {
-	
-			cp5.addTextfield(inputs[i]).setPosition((app.width / 2) - 115, 242 + (i * 73)).setSize(236, 31)
+			cp5.addTextfield(inputs[i]).setPosition((app.width / 2) - 100, 30 + (i * 70)).setSize(200, 40)
 					.setAutoClear(true);
 		}
 		
@@ -33,8 +32,8 @@ public class UserRegisterView {
 	}
 
 	public void drawScreen() {
-		
 		drawButton();
+
 	}
 
 	private void drawInput() {
@@ -42,18 +41,21 @@ public class UserRegisterView {
 	}
 
 	private void drawButton() {
-		app.rect((app.width / 2) - 80, (app.height) - 136, 150, 51);
+		app.rect((app.width / 2) - 40, (app.height) - 50, 80, 30);
 	}
 
 	public void getInfoForm() {
-		/*if (app.mouseX > 210 && app.mouseX < 290 && app.mouseY > 450 && app.mouseY < 490) {
+		if (app.mouseX > 210 && app.mouseX < 290 && app.mouseY > 450 && app.mouseY < 490) {
 			username = cp5.get(Textfield.class, "username").getText();
 			password = cp5.get(Textfield.class, "password").getText();
 			confirmPassword = cp5.get(Textfield.class, "confirmPassword").getText();
 			email = cp5.get(Textfield.class, "email").getText();
 			
-		
-		}*/
+			//Esto valida que un string sea igual a otro
+			if(password.equals(confirmPassword)) {
+				userRegisController.getInfoForm(username,password,confirmPassword,email);
+			}
+		}
 	}
 
 }

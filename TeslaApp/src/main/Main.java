@@ -20,7 +20,11 @@ public class Main extends PApplet {
 	
 
 	private int pantalla = 0;
-	private UserRegisterView userRegView;
+	
+	
+	public Pantalla pantallas;
+	
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -35,7 +39,7 @@ public class Main extends PApplet {
 		
 		
 		//Todas la imagenes
-		PInicio=loadImage("img/Inicio.png");
+		//PInicio=loadImage("img/Inicio.png");
 		PSub=loadImage("img/Sub.png");
 		PExi=loadImage("img/pExito.png");
 		bContinuar=loadImage("img/bcontinuar.png");
@@ -53,9 +57,13 @@ public class Main extends PApplet {
 		pInfoX=loadImage("img/pInfoX.png");
 		pInfoY=loadImage("img/pInfoY.png");
 		
+		pantallas= new Pantalla(this);
+		pantallas.cargar();
 		
 		
-	//	userRegView = new UserRegisterView(this);
+		
+		
+	   //userRegister = new UserRegisterView(this);
 		
 		
 		
@@ -66,9 +74,13 @@ public class Main extends PApplet {
 	
 	public void draw() {
 		
-		
+		pantallas.pintar(); 
+		fill(255);
+	    textSize(20);
+	    text("x=" + mouseX + "y=" + mouseY, mouseX, mouseY);
+	    
 		//switch que controla las pantallas 
-		switch (pantalla) {
+		/*switch (pantalla) {
 		
 		//pantalla con el logo
 		case 0:
@@ -80,7 +92,7 @@ public class Main extends PApplet {
 		case 1:
 			//image(PSub,0,0);
 			image(PSub,0,0);
-			//userRegView.drawScreen();
+			//userRegister.drawScreen();
 			break;
 
 			
@@ -106,7 +118,7 @@ public class Main extends PApplet {
 			//pantalla carro modelo S
 		case 5:
 			image(pModelS,0,0);
-			break;
+		break;
 			
 			
 		//pantalla carro modelo 3
@@ -153,11 +165,12 @@ public class Main extends PApplet {
 		
 	
 }
-	
+	*/
+	}
 	public void mousePressed() {
 		
-		
-		switch (pantalla) {
+		pantallas.pasarPantalla();
+		/*switch (pantalla) {
 		
 		//pantalla con logo
 		case 0:  if((mouseX>0 && mouseX<width)&&(mouseY>0 && mouseY<height)) {
@@ -298,7 +311,7 @@ public class Main extends PApplet {
 			pantalla=8;
   		}
 		break;
-	}
+	}*/
 		
 
 		

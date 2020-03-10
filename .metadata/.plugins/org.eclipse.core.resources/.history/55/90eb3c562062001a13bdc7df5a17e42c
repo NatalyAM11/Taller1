@@ -1,0 +1,39 @@
+package main;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class pantalla {
+	int posX, posY;
+	private PApplet app;
+	private PImage PInicio;
+	int pantalla;
+
+	
+	public pantalla (PApplet app) {
+		this.app=app;
+		this.pantalla=0;
+	}
+	
+	public void pintar() {
+		
+		switch(pantalla) {
+		case 0:
+			app.image(PInicio,0,0);
+			break;
+			
+			
+			//pantalla de registro
+		case 1:
+			//image(PSub,0,0);
+			//image(PSub,0,0);
+			//userRegView.drawScreen();
+			break;
+		}
+	
+		
+	}
+	public void cargar() {
+		
+		PInicio=app.loadImage("img/Inicio.png");
+}
+}

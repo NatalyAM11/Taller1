@@ -1,0 +1,22 @@
+package main;
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class pantalla {
+	int posX, posY;
+	private PApplet app;
+	private PImage pModelS;
+	int pantalla;
+
+	
+	public pantalla (PApplet app) {
+		this.app=app;
+		this.pantalla=0;
+	}
+	
+	public void pintar() {
+		switch(pantalla) {
+		
+		}
+	}
+}
