@@ -10,7 +10,7 @@ public class Pantalla {
 	int posX, posY;
 	
 	//pantalla
-	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF,pNoticias,pComparar;
+	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF,pNoticias,pComparar,pLogOut;
 	private PImage pModelS,pModel3,pModelX,pModelY;
 	private PImage pHistorial,pCompra, pCompra2, pCompra3;
 	private PImage pInfoS,pInfo3,pInfoX,pInfoY;
@@ -94,6 +94,7 @@ public class Pantalla {
 		modelCompa3=app.loadImage("img/pComparacion3.png");
 		modelCompaS=app.loadImage("img/pComparacionS.png");
 		modelCompaY=app.loadImage("img/pComparacionY.png");
+		pLogOut=app.loadImage("img/pLogOut.png");
 		tam=0;
 		tam2=0;
 		tam3=0;
@@ -103,7 +104,7 @@ public class Pantalla {
 		tam3C=0;
 		tam4C=0;
 		
-		userRegister = new UserRegisterView(app);
+		//userRegister = new UserRegisterView(app);
 }
 	
 
@@ -205,6 +206,9 @@ public class Pantalla {
 			compararOtroCarro();
 			tipoCarroCompa();
 			break;
+		case 22:
+			app.image(pLogOut,0,0);
+			break;
 			
 			
 			
@@ -294,6 +298,11 @@ public class Pantalla {
 				if((app.mouseX>206 && app.mouseX<app.width)&&(app.mouseY>507 && app.mouseY<app.height)) {
 					pantalla=8;
 					}
+				if((app.mouseX>206 && app.mouseX<app.width)&&(app.mouseY>102 && app.mouseY<152)) {
+					pantalla=22;
+					}
+				
+				
 				break;
 				
 				
@@ -520,6 +529,10 @@ public class Pantalla {
 				
 					
 				break;
+				case 22: if((app.mouseX>206 && app.mouseX<app.width)&&(app.mouseY>102 && app.mouseY<152)) {
+					pantalla=1;
+					compra=5;
+					}
 			}
 			}
 	

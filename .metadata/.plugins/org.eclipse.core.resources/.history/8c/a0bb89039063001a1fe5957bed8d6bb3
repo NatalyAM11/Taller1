@@ -10,13 +10,14 @@ public class Pantalla {
 	int posX, posY;
 	
 	//pantalla
-	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF,pNoticias,pComparar;
+	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF,pNoticias,pComparar,pLogOut;
 	private PImage pModelS,pModel3,pModelX,pModelY;
 	private PImage pHistorial,pCompra, pCompra2, pCompra3;
 	private PImage pInfoS,pInfo3,pInfoX,pInfoY;
 	private PImage modelSFoto,model3Foto,modelXFoto,modelYFoto;
 	private PImage modelSPrecio,model3Precio,modelXPrecio,modelYPrecio;
 	private PImage modelSHistorial,model3Historial,modelXHistorial,modelYHistorial;
+	private PImage modelCompaX,modelCompaS,modelCompa3,modelCompaY;
 	
 	//botones
 	private PImage bContinuar;
@@ -25,12 +26,21 @@ public class Pantalla {
 	//Variable que va en el switch
 	int pantalla;
 	int precio;
+	int comparacion;
+	//Varaibles para controlar el tamaño de las graficas
 	int tam;
 	int tam2;
 	int tam3;
+	int tam4;
+	int tam1C;
+	int tam2C;
+	int tam3C;
+	int tam4C;
+	
 	int modeloComparadoA;
 	int modeloComparadoAu;
 	int modeloComparadoV;
+	int modeloComparadoR;
 	
 	private UserRegisterView userRegister;
 
@@ -80,9 +90,20 @@ public class Pantalla {
 		modelYHistorial=app.loadImage("img/modelYHisto.png");
 		pNoticias=app.loadImage("img/pNoticias.png");
 		pComparar=app.loadImage("img/pComparacion.png");
+		modelCompaX=app.loadImage("img/pComparacionX.png");
+		modelCompa3=app.loadImage("img/pComparacion3.png");
+		modelCompaS=app.loadImage("img/pComparacionS.png");
+		modelCompaY=app.loadImage("img/pComparacionY.png");
+		pLogOut=app.loadImage("img/pLogOut.png");
 		tam=0;
 		tam2=0;
 		tam3=0;
+		tam4=0;
+		tam1C=0;
+		tam2C=0;
+		tam3C=0;
+		tam4C=0;
+		
 		//userRegister = new UserRegisterView(app);
 }
 	
@@ -181,6 +202,12 @@ public class Pantalla {
 			compararAcelaracion();
 			compararAutonomia();
 			compararVelocidad();
+			compararRines();
+			compararOtroCarro();
+			tipoCarroCompa();
+			break;
+		case 22:
+			app.image(pLogOut,0,0);
 			break;
 			
 			
@@ -271,6 +298,11 @@ public class Pantalla {
 				if((app.mouseX>206 && app.mouseX<app.width)&&(app.mouseY>507 && app.mouseY<app.height)) {
 					pantalla=8;
 					}
+				if((app.mouseX>206 && app.mouseX<app.width)&&(app.mouseY>102 && app.mouseY<152)) {
+					pantalla=22;
+					}
+				
+				
 				break;
 				
 				
@@ -296,7 +328,13 @@ public class Pantalla {
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
 					modeloComparadoA=0;
+					modeloComparadoAu=0;
+					modeloComparadoV=0;
+					modeloComparadoR=0;
+					
 					pantalla=21;
+					//aparece el modelo de carro a comparar
+					comparacion=0;
 					}
 				break;
 			
@@ -316,7 +354,12 @@ public class Pantalla {
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
 					modeloComparadoA=1;
+					modeloComparadoAu=1;
+					modeloComparadoV=1;
+					modeloComparadoR=1;
 					pantalla=21;
+					//aparece el modelo de carro a comparar
+					comparacion=1;
 					}
 				break;
 			
@@ -333,7 +376,13 @@ public class Pantalla {
 							compra=2;}
 						//Boton comparacion
 						if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
-							pantalla=21;}
+							pantalla=21;
+							//aparece el modelo de carro a comparar
+							comparacion=2;
+							modeloComparadoA=2;
+							modeloComparadoAu=2;
+							modeloComparadoV=2;
+							modeloComparadoR=2;}
 						//volverMenu();
 				break;
 						
@@ -351,7 +400,13 @@ public class Pantalla {
 					compra=3;}
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
-					pantalla=21;}
+					modeloComparadoA=3;
+					modeloComparadoAu=3;
+					modeloComparadoV=3;
+					modeloComparadoR=3;
+					pantalla=21;
+					//aparece el modelo de carro a comparar
+					comparacion=3;}
 				break;
 				
 				//pantalla historial
@@ -474,6 +529,9 @@ public class Pantalla {
 				
 					
 				break;
+				case 22: if((app.mouseX>206 && app.mouseX<app.width)&&(app.mouseY>102 && app.mouseY<152)) {
+					pantalla=1;
+					}
 			}
 			}
 	
@@ -549,7 +607,7 @@ public class Pantalla {
 			tam=40;
 		}
 		if(app.frameCount==600) {
-			tam=90;
+			tam=115;
 		}
 		break;
 	case 1:
@@ -560,7 +618,7 @@ public class Pantalla {
 			tam=40;
 		}
 		if(app.frameCount==700) {
-			tam=115;
+			tam=125;
 		}
 		break;
 	case 2:
@@ -582,12 +640,12 @@ public class Pantalla {
 			tam=40;
 		}
 		if(app.frameCount==700) {
-			tam=125;
+			tam=128;
 		}
 		break;
 	}
 }
-	
+	//comparo auntonimia
 	public void compararAutonomia() {
 		app.frameRate(1000);
 		
@@ -647,7 +705,7 @@ public class Pantalla {
 	}
 }
 	
-	
+	//comparo velocidad
 	public void compararVelocidad() {
 		app.frameRate(1000);
 		
@@ -690,7 +748,7 @@ public class Pantalla {
 			tam3=40;
 		}
 		if(app.frameCount==700) {
-			tam3=80;
+			tam3=68;
 		}
 		break;
 	case 3:
@@ -701,13 +759,128 @@ public class Pantalla {
 			tam2=40;
 		}
 		if(app.frameCount==700) {
-			tam2=80;
+			tam2=50;
 		}
 		break;
 	}
 		
 		
 }
+	
+	//comparo velocidad
+		public void compararRines() {
+			app.frameRate(1000);
+			
+			if(app.frameCount==900) {	
+			}
+			app.noStroke();
+			app.fill(230,35,41);
+			app.rect(38,610,tam4,19);
+			
+		
+			//con este switch controlo los datos de cada modelo, los que van a ser comparados
+		switch(modeloComparadoR) {
+		case 0:
+			if(app.frameCount==10) {
+				tam4=20;
+			}
+			if(app.frameCount==40) {
+				tam4=40;
+			}
+			if(app.frameCount==600) {
+				tam4=130;
+			}
+			break;
+		case 1:
+			if(app.frameCount==10) {
+				tam4=20;
+			}
+			if(app.frameCount==40) {
+				tam4=40;
+			}
+			if(app.frameCount==700) {
+				tam4=124;
+			}
+			break;
+		case 2:
+			if(app.frameCount==10) {
+				tam4=20;
+			}
+			if(app.frameCount==40) {
+				tam4=40;
+			}
+			if(app.frameCount==700) {
+				tam4=135;
+			}
+			break;
+		case 3:
+			if(app.frameCount==10) {
+				tam4=20;
+			}
+			if(app.frameCount==40) {
+				tam4=40;
+			}
+			if(app.frameCount==700) {
+				tam4=128;
+			}
+			break;
+		}		
+	}
+		
+		public void compararOtroCarro() {
+			app.frameRate(1000);
+			
+			if(app.frameCount==900) {	
+			}
+			app.noStroke();
+			app.fill(230,35,41);
+			app.rect(233,370,tam1C,19);
+			app.rect(233,449,tam2C,19);
+			app.rect(233,528,tam3C,19);
+			app.rect(233,610,tam4C,19);
+			
+			if(app.frameCount==10) {
+				tam1C=20;}
+			if(app.frameCount==40) {
+				tam1C=40;}
+			if(app.frameCount==700) {
+				tam1C=58;}
+			
+			if(app.frameCount==10) {
+				tam2C=20;}
+			if(app.frameCount==40) {
+				tam2C=40;}
+			if(app.frameCount==700) {
+				tam2C=63;}
+			
+			if(app.frameCount==10) {
+				tam3C=20;}
+			if(app.frameCount==40) {
+				tam3C=40;}
+			if(app.frameCount==700) {
+				tam3C=45;}
+			
+			if(app.frameCount==10) {
+				tam4C=20;}
+			if(app.frameCount==40) {
+				tam4C=40;}
+			if(app.frameCount==700) {
+				tam4C=25;}
+		}
+		
+		public void tipoCarroCompa() {
+			switch(comparacion) {
+			case 0:app.image(modelCompaS,0,0);  
+				break;
+			case 1:app.image(modelCompa3,0,0);   
+			break;
+			case 2:app.image(modelCompaX,0,0);  
+			break;
+			case 3:app.image(modelCompaY,0,0);   
+			break;
+			}
+			
+		}
 }
 
 	
