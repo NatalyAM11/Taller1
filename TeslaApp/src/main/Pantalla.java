@@ -10,7 +10,7 @@ public class Pantalla {
 	int posX, posY;
 	
 	//pantalla
-	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF;
+	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF,pNoticias;
 	private PImage pModelS,pModel3,pModelX,pModelY;
 	private PImage pHistorial,pCompra, pCompra2, pCompra3;
 	private PImage pInfoS,pInfo3,pInfoX,pInfoY;
@@ -72,6 +72,7 @@ public class Pantalla {
 		modelSHistorial=app.loadImage("img/modelSHisto.png");
 		model3Historial=app.loadImage("img/model3Histo.png");
 		modelYHistorial=app.loadImage("img/modelYHisto.png");
+		pNoticias=app.loadImage("img/pNoticias.png");
 		
 		
 		//userRegister = new UserRegisterView(app);
@@ -164,6 +165,9 @@ public class Pantalla {
 		case 19:
 			app.image(pMenuNoti,0,0);
 			break;
+		case 20:
+			app.image(pNoticias,0,0);
+			break;
 			
 			
 			
@@ -230,11 +234,11 @@ public class Pantalla {
 				
 				case 4:
 					
-					if((app.mouseX>346 && app.mouseX<385)&&(app.mouseY>28 && app.mouseY<70)) {
+					if((app.mouseX>199 && app.mouseX<app.width)&&(app.mouseY>28 && app.mouseY<70)) {
 					       pantalla=3;
 					      }
 					
-					if((app.mouseX>187 && app.mouseX<375)&&(app.mouseY>107 && app.mouseY<158)) {
+					if((app.mouseX>199 && app.mouseX<app.width)&&(app.mouseY>163 && app.mouseY<198)) {
 					       pantalla=9;
 					      }
 				
@@ -279,9 +283,7 @@ public class Pantalla {
 				break;
 			
 				
-				
-				
-				
+			
 				//modelo3
 				case 6: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=3;}
@@ -359,7 +361,15 @@ public class Pantalla {
 					if(compra==0) {
 						modeloHistorial=0;
 					}
-					
+					if(compra==1) {
+						modeloHistorial=1;
+					}
+					if(compra==2) {
+						modeloHistorial=2;
+					}
+					if(compra==3) {
+						modeloHistorial=3;
+					}
 					
 					break;
 					
@@ -401,6 +411,8 @@ public class Pantalla {
 					 }
 		  		}
 				break;
+				
+				
 				//tercera pantalla de compra
 				case 17: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=16;
@@ -409,11 +421,23 @@ public class Pantalla {
 					pantalla=18;
 		  		}
 				
+				
 				//Regreso al menu
 				case 18: if((app.mouseX>127 && app.mouseX<294)&&(app.mouseY>529 && app.mouseY<577)) {
 					pantalla=3;
 		  		}
+				
+				//pantalla menu con noticias
 				case 19:if((app.mouseX>27 && app.mouseX<67)&&(app.mouseY>31 && app.mouseY<70)) {
+					pantalla=3;
+					}
+				
+				if((app.mouseX>0 && app.mouseX<214)&&(app.mouseY>83 && app.mouseY<138)) {
+					pantalla=20;
+					}
+				
+				//pantalla noticias
+				case 20:if((app.mouseX>27 && app.mouseX<67)&&(app.mouseY>31 && app.mouseY<70)) {
 					pantalla=3;
 					}
 			}
@@ -459,11 +483,11 @@ public class Pantalla {
 		switch (modeloHistorial) {
 		case 0:app.image(modelSHistorial,0,178);  
 		break;
-	case 1:app.image(model3Historial,0,0);   
+	case 1:app.image(model3Historial,0,178);   
 	break;
-	case 2:app.image(modelXHistorial,0,0);  
+	case 2:app.image(modelXHistorial,0,178);  
 	break;
-	case 3:app.image(modelYHistorial,0,0);   
+	case 3:app.image(modelYHistorial,0,178);   
 	break;
 	}
 	}
