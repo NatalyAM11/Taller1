@@ -103,7 +103,7 @@ public class Pantalla {
 		tam3C=0;
 		tam4C=0;
 		
-		//userRegister = new UserRegisterView(app);
+		userRegister = new UserRegisterView(app);
 }
 	
 
