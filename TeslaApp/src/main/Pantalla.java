@@ -10,7 +10,7 @@ public class Pantalla {
 	int posX, posY;
 	
 	//pantalla
-	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF,pNoticias;
+	private PImage PInicio,PSub,PExi,pMenu,pMenuHistorial,pMenuNoti,pExitoF,pNoticias,pComparar;
 	private PImage pModelS,pModel3,pModelX,pModelY;
 	private PImage pHistorial,pCompra, pCompra2, pCompra3;
 	private PImage pInfoS,pInfo3,pInfoX,pInfoY;
@@ -25,6 +25,8 @@ public class Pantalla {
 	//Variable que va en el switch
 	int pantalla;
 	int precio;
+	int tam;
+	int modeloComparadoA;
 	
 	private UserRegisterView userRegister;
 
@@ -73,8 +75,8 @@ public class Pantalla {
 		model3Historial=app.loadImage("img/model3Histo.png");
 		modelYHistorial=app.loadImage("img/modelYHisto.png");
 		pNoticias=app.loadImage("img/pNoticias.png");
-		
-		
+		pComparar=app.loadImage("img/pComparacion.png");
+		tam=0;
 		//userRegister = new UserRegisterView(app);
 }
 	
@@ -167,6 +169,10 @@ public class Pantalla {
 			break;
 		case 20:
 			app.image(pNoticias,0,0);
+			break;
+		case 21:
+			app.image(pComparar,0,0);
+			compararAcelaracion();
 			break;
 			
 			
@@ -266,9 +272,7 @@ public class Pantalla {
 					
 					if((app.mouseX>224 && app.mouseX<334)&&(app.mouseY>518 && app.mouseY<479)) {
 						pantalla=5;
-						}
-				
-			
+					}
 		      		}
 				
 				//Para pasar a la pantalla de info
@@ -279,6 +283,12 @@ public class Pantalla {
 				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
 					pantalla=10;
 					compra=0;
+					}
+				
+				//Boton comparacion
+				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
+					modeloComparadoA=0;
+					pantalla=21;
 					}
 				break;
 			
@@ -295,9 +305,13 @@ public class Pantalla {
 				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
 					pantalla=10;
 					compra=1;}
+				//Boton comparacion
+				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
+					modeloComparadoA=1;
+					pantalla=21;
+					}
 				break;
-				
-				
+			
 				//modelX
 				case 7: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=3;
@@ -309,12 +323,14 @@ public class Pantalla {
 						if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
 							pantalla=10;
 							compra=2;}
-						
-						volverMenu();
+						//Boton comparacion
+						if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
+							pantalla=21;}
+						//volverMenu();
 				break;
 						
 						
-				//modelX
+				//modelY
 				case 8: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
 					pantalla=3;
 		  		}	
@@ -325,7 +341,10 @@ public class Pantalla {
 				if((app.mouseX>104 &&app. mouseX<310)&&(app.mouseY>631 && app.mouseY<675)) {
 					pantalla=10;
 					compra=3;}
-					break;
+				//Boton comparacion
+				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
+					pantalla=21;}
+				break;
 				
 				//pantalla historial
 				case 9: if((app.mouseX>41 && app.mouseX<81)&&(app.mouseY>30 && app.mouseY<69)) {
@@ -440,6 +459,13 @@ public class Pantalla {
 				case 20:if((app.mouseX>27 && app.mouseX<67)&&(app.mouseY>31 && app.mouseY<70)) {
 					pantalla=3;
 					}
+				
+				case 21:if((app.mouseX>27 && app.mouseX<67)&&(app.mouseY>31 && app.mouseY<70)) {
+					pantalla=3;
+					}
+				
+					
+				break;
 			}
 			}
 	
@@ -492,6 +518,68 @@ public class Pantalla {
 	}
 	}
 	
+	
+	//comparo los datos
+	public void compararAcelaracion() {
+		app.frameRate(1000);
+		
+		if(app.frameCount==900) {
+			
+		}
+		
+		app.noStroke();
+		app.fill(230,35,41);
+		app.rect(39,370,tam,20);
+		
+	
+		//con este switch controlo los datos de cada modelo, los que van a ser comparados
+	switch(modeloComparadoA) {
+	case 0:
+		if(app.frameCount==10) {
+			tam=20;
+		}
+		if(app.frameCount==40) {
+			tam=40;
+		}
+		if(app.frameCount==600) {
+			tam=85;
+		}
+		break;
+	case 1:
+		if(app.frameCount==10) {
+			tam=20;
+		}
+		if(app.frameCount==40) {
+			tam=40;
+		}
+		if(app.frameCount==700) {
+			tam=115;
+		}
+		break;
+	case 2:
+		if(app.frameCount==10) {
+			tam=20;
+		}
+		if(app.frameCount==40) {
+			tam=40;
+		}
+		if(app.frameCount==700) {
+			tam=80;
+		}
+		break;
+	case 3:
+		if(app.frameCount==10) {
+			tam=20;
+		}
+		if(app.frameCount==40) {
+			tam=40;
+		}
+		if(app.frameCount==700) {
+			tam=125;
+		}
+		break;
+	}
+}
 		
 		
 }
