@@ -26,7 +26,6 @@ public class Pantalla {
 	//Variable que va en el switch
 	int pantalla;
 	int precio;
-	int comparacion;
 	//Varaibles para controlar el tamaño de las graficas
 	int tam;
 	int tam2;
@@ -203,7 +202,6 @@ public class Pantalla {
 			compararVelocidad();
 			compararRines();
 			compararOtroCarro();
-			tipoCarroCompa();
 			break;
 			
 			
@@ -319,13 +317,7 @@ public class Pantalla {
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
 					modeloComparadoA=0;
-					modeloComparadoAu=0;
-					modeloComparadoV=0;
-					modeloComparadoR=0;
-					
 					pantalla=21;
-					//aparece el modelo de carro a comparar
-					comparacion=0;
 					}
 				break;
 			
@@ -345,12 +337,7 @@ public class Pantalla {
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
 					modeloComparadoA=1;
-					modeloComparadoAu=1;
-					modeloComparadoV=1;
-					modeloComparadoR=1;
 					pantalla=21;
-					//aparece el modelo de carro a comparar
-					comparacion=1;
 					}
 				break;
 			
@@ -367,13 +354,7 @@ public class Pantalla {
 							compra=2;}
 						//Boton comparacion
 						if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
-							pantalla=21;
-							//aparece el modelo de carro a comparar
-							comparacion=2;
-							modeloComparadoA=2;
-							modeloComparadoAu=2;
-							modeloComparadoV=2;
-							modeloComparadoR=2;}
+							pantalla=21;}
 						//volverMenu();
 				break;
 						
@@ -391,13 +372,7 @@ public class Pantalla {
 					compra=3;}
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
-					modeloComparadoA=3;
-					modeloComparadoAu=3;
-					modeloComparadoV=3;
-					modeloComparadoR=3;
-					pantalla=21;
-					//aparece el modelo de carro a comparar
-					comparacion=3;}
+					pantalla=21;}
 				break;
 				
 				//pantalla historial
@@ -854,20 +829,6 @@ public class Pantalla {
 				tam4C=40;}
 			if(app.frameCount==700) {
 				tam4C=25;}
-		}
-		
-		public void tipoCarroCompa() {
-			switch(comparacion) {
-			case 0:app.image(modelCompaS,0,0);  
-				break;
-			case 1:app.image(modelCompa3,0,0);   
-			break;
-			case 2:app.image(modelCompaX,0,0);  
-			break;
-			case 3:app.image(modelCompaY,0,0);   
-			break;
-			}
-			
 		}
 }
 

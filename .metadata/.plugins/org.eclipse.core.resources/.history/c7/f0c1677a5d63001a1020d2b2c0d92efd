@@ -319,13 +319,7 @@ public class Pantalla {
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
 					modeloComparadoA=0;
-					modeloComparadoAu=0;
-					modeloComparadoV=0;
-					modeloComparadoR=0;
-					
 					pantalla=21;
-					//aparece el modelo de carro a comparar
-					comparacion=0;
 					}
 				break;
 			
@@ -345,12 +339,7 @@ public class Pantalla {
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
 					modeloComparadoA=1;
-					modeloComparadoAu=1;
-					modeloComparadoV=1;
-					modeloComparadoR=1;
 					pantalla=21;
-					//aparece el modelo de carro a comparar
-					comparacion=1;
 					}
 				break;
 			
@@ -367,13 +356,7 @@ public class Pantalla {
 							compra=2;}
 						//Boton comparacion
 						if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
-							pantalla=21;
-							//aparece el modelo de carro a comparar
-							comparacion=2;
-							modeloComparadoA=2;
-							modeloComparadoAu=2;
-							modeloComparadoV=2;
-							modeloComparadoR=2;}
+							pantalla=21;}
 						//volverMenu();
 				break;
 						
@@ -391,13 +374,7 @@ public class Pantalla {
 					compra=3;}
 				//Boton comparacion
 				if((app.mouseX>57 &&app. mouseX<166)&&(app.mouseY>588 && app.mouseY<620)) {
-					modeloComparadoA=3;
-					modeloComparadoAu=3;
-					modeloComparadoV=3;
-					modeloComparadoR=3;
-					pantalla=21;
-					//aparece el modelo de carro a comparar
-					comparacion=3;}
+					pantalla=21;}
 				break;
 				
 				//pantalla historial
