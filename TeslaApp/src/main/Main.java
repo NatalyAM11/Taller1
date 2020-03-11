@@ -170,6 +170,7 @@ public class Main extends PApplet {
 	public void mousePressed() {
 		
 		pantallas.pasarPantalla();
+		//pantallas.volverMenu();
 		/*switch (pantalla) {
 		
 		//pantalla con logo
