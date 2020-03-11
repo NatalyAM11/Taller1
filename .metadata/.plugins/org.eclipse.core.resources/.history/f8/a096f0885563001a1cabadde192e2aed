@@ -25,15 +25,12 @@ public class Pantalla {
 	//Variable que va en el switch
 	int pantalla;
 	int precio;
-	//Varaibles para controlar el tamaño de las graficas
 	int tam;
 	int tam2;
 	int tam3;
-	int tam4;
 	int modeloComparadoA;
 	int modeloComparadoAu;
 	int modeloComparadoV;
-	int modeloComparadoR;
 	
 	private UserRegisterView userRegister;
 
@@ -86,7 +83,6 @@ public class Pantalla {
 		tam=0;
 		tam2=0;
 		tam3=0;
-		tam4=0;
 		//userRegister = new UserRegisterView(app);
 }
 	
@@ -185,7 +181,6 @@ public class Pantalla {
 			compararAcelaracion();
 			compararAutonomia();
 			compararVelocidad();
-			compararRines();
 			break;
 			
 			
@@ -554,7 +549,7 @@ public class Pantalla {
 			tam=40;
 		}
 		if(app.frameCount==600) {
-			tam=115;
+			tam=85;
 		}
 		break;
 	case 1:
@@ -565,7 +560,7 @@ public class Pantalla {
 			tam=40;
 		}
 		if(app.frameCount==700) {
-			tam=125;
+			tam=115;
 		}
 		break;
 	case 2:
@@ -587,12 +582,12 @@ public class Pantalla {
 			tam=40;
 		}
 		if(app.frameCount==700) {
-			tam=128;
+			tam=125;
 		}
 		break;
 	}
 }
-	//comparo auntonimia
+	
 	public void compararAutonomia() {
 		app.frameRate(1000);
 		
@@ -652,7 +647,7 @@ public class Pantalla {
 	}
 }
 	
-	//comparo velocidad
+	
 	public void compararVelocidad() {
 		app.frameRate(1000);
 		
@@ -673,7 +668,7 @@ public class Pantalla {
 			tam3=40;
 		}
 		if(app.frameCount==600) {
-			tam3=80;
+			tam3=68;
 		}
 		break;
 	case 1:
@@ -695,7 +690,7 @@ public class Pantalla {
 			tam3=40;
 		}
 		if(app.frameCount==700) {
-			tam3=68;
+			tam3=80;
 		}
 		break;
 	case 3:
@@ -706,75 +701,13 @@ public class Pantalla {
 			tam2=40;
 		}
 		if(app.frameCount==700) {
-			tam2=50;
+			tam2=80;
 		}
 		break;
 	}
 		
 		
 }
-	
-	//comparo velocidad
-		public void compararRines() {
-			app.frameRate(1000);
-			
-			if(app.frameCount==900) {	
-			}
-			app.noStroke();
-			app.fill(230,35,41);
-			app.rect(38,610,tam4,19);
-			
-		
-			//con este switch controlo los datos de cada modelo, los que van a ser comparados
-		switch(modeloComparadoR) {
-		case 0:
-			if(app.frameCount==10) {
-				tam4=20;
-			}
-			if(app.frameCount==40) {
-				tam4=40;
-			}
-			if(app.frameCount==600) {
-				tam4=130;
-			}
-			break;
-		case 1:
-			if(app.frameCount==10) {
-				tam4=20;
-			}
-			if(app.frameCount==40) {
-				tam4=40;
-			}
-			if(app.frameCount==700) {
-				tam4=124;
-			}
-			break;
-		case 2:
-			if(app.frameCount==10) {
-				tam4=20;
-			}
-			if(app.frameCount==40) {
-				tam4=40;
-			}
-			if(app.frameCount==700) {
-				tam4=130;
-			}
-			break;
-		case 3:
-			if(app.frameCount==10) {
-				tam4=20;
-			}
-			if(app.frameCount==40) {
-				tam4=40;
-			}
-			if(app.frameCount==700) {
-				tam4=128;
-			}
-			break;
-		}
-			
-			
-	}
 }
 
 	

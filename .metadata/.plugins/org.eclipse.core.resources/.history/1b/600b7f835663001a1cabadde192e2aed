@@ -185,7 +185,6 @@ public class Pantalla {
 			compararAcelaracion();
 			compararAutonomia();
 			compararVelocidad();
-			compararRines();
 			break;
 			
 			
@@ -722,7 +721,7 @@ public class Pantalla {
 			}
 			app.noStroke();
 			app.fill(230,35,41);
-			app.rect(38,610,tam4,19);
+			app.rect(39,609,tam4,19);
 			
 		
 			//con este switch controlo los datos de cada modelo, los que van a ser comparados
@@ -735,7 +734,7 @@ public class Pantalla {
 				tam4=40;
 			}
 			if(app.frameCount==600) {
-				tam4=130;
+				tam4=80;
 			}
 			break;
 		case 1:
@@ -746,7 +745,7 @@ public class Pantalla {
 				tam4=40;
 			}
 			if(app.frameCount==700) {
-				tam4=124;
+				tam4=75;
 			}
 			break;
 		case 2:
@@ -757,7 +756,7 @@ public class Pantalla {
 				tam4=40;
 			}
 			if(app.frameCount==700) {
-				tam4=130;
+				tam4=68;
 			}
 			break;
 		case 3:
@@ -768,7 +767,7 @@ public class Pantalla {
 				tam4=40;
 			}
 			if(app.frameCount==700) {
-				tam4=128;
+				tam4=50;
 			}
 			break;
 		}

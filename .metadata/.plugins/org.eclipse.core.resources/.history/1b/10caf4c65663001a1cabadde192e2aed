@@ -746,7 +746,7 @@ public class Pantalla {
 				tam4=40;
 			}
 			if(app.frameCount==700) {
-				tam4=124;
+				tam4=75;
 			}
 			break;
 		case 2:
@@ -757,7 +757,7 @@ public class Pantalla {
 				tam4=40;
 			}
 			if(app.frameCount==700) {
-				tam4=130;
+				tam4=68;
 			}
 			break;
 		case 3:
@@ -768,7 +768,7 @@ public class Pantalla {
 				tam4=40;
 			}
 			if(app.frameCount==700) {
-				tam4=128;
+				tam4=50;
 			}
 			break;
 		}
